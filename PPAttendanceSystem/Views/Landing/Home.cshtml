@@ -1,0 +1,243 @@
+﻿@{
+	ViewBag.Title = "Home";
+}
+
+<head>
+	<style>
+		[class*="fontawesome-"]:before {
+			font-family: 'FontAwesome', sans-serif;
+		}
+
+		/* ---------- GENERAL ---------- */
+		* {
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+			*:before, *:after {
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+
+		input {
+			margin: auto;
+			border: none;
+			font-family: 'Open Sans', Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.5em;
+			padding: 0;
+			-webkit-appearance: none;
+		}
+
+		.lp {
+			line-height: 1.5em;
+		}
+
+		.clearfix {
+			*zoom: 1;
+		}
+
+			.clearfix:before, .clearfix:after {
+				content: ' ';
+				display: table;
+			}
+
+			.clearfix:after {
+				clear: both;
+			}
+
+		.lcontainer {
+			margin: auto;
+			width: 50%;
+			position: relative;
+		}
+
+		/* ---------- LOGIN ---------- */
+		#login {
+			margin: auto;
+			width: 280px;
+		}
+
+			#login form span {
+				margin: auto;
+				background-color: #363b41;
+				border-radius: 3px 0px 0px 3px;
+				color: #606468;
+				display: block;
+				float: left;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				width: 50px;
+			}
+
+			#login form input {
+				margin: auto;
+				height: 50px;
+			}
+
+				#login form input[type="text"], input[type="password"] {
+					margin: auto;
+					background-color: #3b4148;
+					border-radius: 0px 3px 3px 0px;
+					color: #606468;
+					margin-bottom: 1em;
+					padding: 0 16px;
+					width: 230px;
+				}
+
+				#login form input[type="submit"] {
+					margin: auto;
+					font-weight: bold;
+					margin-bottom: 2em;
+					margin-top: 2em;
+					width: 280px;
+					border-radius: 0;
+					font-family: "Roboto Condensed", sans-serif;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+					font-size: 11px;
+					padding: 8px 37px;
+				}
+
+					#login form input[type="submit"]:hover {
+						background-color: white;
+						color: #111;
+					}
+
+			#login > .lp {
+				text-align: center;
+			}
+
+				#login > .lp span {
+					padding-left: 5px;
+				}
+	</style>
+</head>
+
+<body>
+<!-- Landing page background and welcome text-->
+	<section class="bg-dark-30 showcase-page-header module parallax-bg" data-background="../../Content/Landing/CanoeBG.jpg" style="background-size: cover;">
+		<div class="titan-caption">
+			<div class="caption-content">
+				<div class="font-alt mb-30 titan-title-size-1">Chart your course. We'll help you navigate.</div>
+				<div class="font-alt mb-40 titan-title-size-4">Wayfinder</div><a class="section-scroll btn btn-border-w btn-round" href="#begin">Set Destination</a>
+			</div>
+		</div>
+
+		<!-- Trio of options directing to login pages-->
+		<section class="module-medium" id="begin" style="margin-top: 600px;">
+			<div class="container">
+				<div class="row multi-columns-row align-center">
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="card" style="width: 30rem;">
+							<img class="card-img-top" src="~/Content/Landing/map.png" alt="Course Kiosk" style="width:300px;height:170px;">
+							<div class="card-body">
+								<h4 style="margin-top: 20px;">Course Kiosk</h4>
+								<p class="card-text">Find yourself and unlock team paths by recording your time in class.</p>
+								<!-- old button style -- <a href="" class="btn btn-primary" style="margin-bottom: 50px;">Go somewhere</a>-->
+								<a class="section-scroll btn btn-border-w btn-round" href="#kiosk">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="card" style="width: 30rem;">
+							<img class="card-img-top" src="~/Content/Landing/pin.png" alt="Admin Portal" style="width:150px;height:150px;">
+							<div class="card-body">
+								<h4 style="margin-top: 20px;">Administrators</h4>
+								<p class="card-text">Use our compass tools to map out where everyone is in their trek.</p>
+								<a class="section-scroll btn btn-border-w btn-round" href="#admin">Guide the way</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="card" style="width: 30rem;">
+							<img class="card-img-top" src="~/Content/Landing/route.png" alt="Student Portal" style="width:150px;height:150px;">
+							<div class="card-body">
+								<h4 style="margin-top: 20px;">Students</h4>
+								<p class="card-text">Observe where you began and where you are headed with your personal profile.</p>
+								<a class="section-scroll btn btn-border-w btn-round" href="#student">See the journey</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Kiosk login-->
+		<section class="module-medium" id="kiosk" style="margin-top: 600px;">
+			<div class="lcontainer">
+				<div class="row align-center">
+					<div class="col-sm-12 col-md-12 col-lg-12">
+						<div class="font-alt mb-30 titan-title-size-2">School Kiosk Login</div>
+						<div id="login">
+							<form action="javascript:void(0);" method="get">
+								<fieldset class="clearfix">
+									<lp><span class="fontawesome-user"></span><input type="text" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></lp> <!-- JS because of IE support; better: placeholder="Username" -->
+									<lp><span class="fontawesome-lock"></span><input type="password" value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></lp> <!-- JS because of IE support; better: placeholder="Password" -->
+									<lp><a class="section-scroll btn btn-g btn-round" href="@Url.Action("StudentDashboard", "Kiosk")" style="font-size: 11px; line-height: 30px; padding: 8px 37px; width:280px; height:50px; margin: auto; font-weight: bold; margin-bottom: 2em; margin-top: 2em;">Sign In</a></lp>
+								</fieldset>
+							</form>
+							<p>Forgot password? <a href="@Url.Action("StudentDashboard", "Kiosk")" style="color:red">Reset it now </a><span class="fontawesome-arrow-right"></span></p>
+						</div> <!-- end login -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Admin login-->
+		<section class="module-medium" id="admin" style="margin-top: 600px;">
+			<div class="lcontainer">
+				<div class="row align-center">
+					<div class="col-sm-12 col-md-12 col-lg-12">
+						<div class="font-alt mb-30 titan-title-size-2">Administrator Profile Login</div>
+						<div id="login">
+							<form action="javascript:void(0);" method="get">
+								<fieldset class="clearfix">
+									<lp><span class="fontawesome-user"></span><input type="text" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></lp> <!-- JS because of IE support; better: placeholder="Username" -->
+									<lp><span class="fontawesome-lock"></span><input type="password" value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></lp> <!-- JS because of IE support; better: placeholder="Password" -->
+									<lp><a class="section-scroll btn btn-g btn-round" href="@Url.Action("AdminDashboard", "Admin")" style="font-size: 11px; line-height: 30px; padding: 8px 37px; width:280px; height:50px; margin: auto; font-weight: bold; margin-bottom: 2em; margin-top: 2em;">Sign In</a></lp>
+								</fieldset>
+							</form>
+							<p>Forgot password? <a href="@Url.Action("AdminDashboard", "Admin")" style="color:red">Reset it now </a><span class="fontawesome-arrow-right"></span></p>
+						</div> <!-- end login -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Student login-->
+		<section class="module-medium" id="student" style="margin-top: 600px;">
+			<div class="lcontainer">
+				<div class="row align-center">
+					<div class="col-sm-12 col-md-12 col-lg-12">
+						<div class="font-alt mb-30 titan-title-size-2">Student Profile Login</div>
+						<div id="login">
+							<form action="javascript:void(0);" method="get">
+								<fieldset class="clearfix">
+									<lp><span class="fontawesome-user"></span><input type="text" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></lp> <!-- JS because of IE support; better: placeholder="Username" -->
+									<lp><span class="fontawesome-lock"></span><input type="password" value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></lp> <!-- JS because of IE support; better: placeholder="Password" -->
+									<lp><a class="section-scroll btn btn-g btn-round" href="@Url.Action("StudentHome", "Student")" style="font-size: 11px; line-height: 30px; padding: 8px 37px; width:280px; height:50px; margin: auto; font-weight: bold; margin-bottom: 2em; margin-top: 2em;">Sign In</a></lp>
+								</fieldset>
+							</form>
+							<p>Forgot password? <a href="@Url.Action("StudentHome", "Student")" style="color:red">Reset it now </a><span class="fontawesome-arrow-right"></span></p>
+						</div> <!-- end login -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer bar-->
+		<section class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-md-8 col-lg-9">
+						<div class="callout-text font-alt">
+							<p style="margin-bottom: 0px;">2018 Team Powerpuff</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+</body>
