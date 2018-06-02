@@ -145,7 +145,6 @@ namespace _5051.Backend
         private void DataSetDefault()
         {
             DataSetClear();
-            var count = 0;
             Create(new AvatarModel("../../Content/AvatarIcons/cat-icon.png", "cat", "cat"));
             Create(new AvatarModel("../../Content/AvatarIcons/dog-icon.png", "dog", "dog"));
             Create(new AvatarModel("../../Content/AvatarIcons/elephant-icon.png", "elephant", "elephant"));
