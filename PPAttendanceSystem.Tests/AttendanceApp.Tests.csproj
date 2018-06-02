@@ -99,9 +99,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PPAttendanceSystem\PPAttendanceSystem.csproj">
+    <ProjectReference Include="..\PPAttendanceSystem\AttendanceApp.csproj">
       <Project>{3FB6DFE6-43FD-48FD-A214-3A80AB883CBB}</Project>
-      <Name>5051</Name>
+      <Name>AttendanceApp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

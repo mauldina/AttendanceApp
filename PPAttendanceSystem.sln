@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPAttendanceSystem", "PPAttendanceSystem\PPAttendanceSystem.csproj", "{3FB6DFE6-43FD-48FD-A214-3A80AB883CBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceApp", "PPAttendanceSystem\AttendanceApp.csproj", "{3FB6DFE6-43FD-48FD-A214-3A80AB883CBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPAttendanceSystem.Tests", "PPAttendanceSystem.Tests\PPAttendanceSystem.Tests.csproj", "{B1CC422F-5510-4A5B-8B4E-CDCB37FEDE8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceApp.Tests", "PPAttendanceSystem.Tests\AttendanceApp.Tests.csproj", "{B1CC422F-5510-4A5B-8B4E-CDCB37FEDE8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
