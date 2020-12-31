@@ -42,7 +42,15 @@ steps:
     sourceCodeDirectory: '$(Build.SourcesDirectory)'
     language: 'csharp'
     cleanupBuildCommands: 'dotnet clean $(solution)'
+    buildCommands: 'dotnet build $(solution)'
     querySuite: 'Recommended'
     timeout: '1800'
     ram: '16384'
     addProjectDirToScanningExclusionList: true
+
+- task: PublishSecurityAnalysisLogs@2
+  inputs:
+    ArtifactName: 'CodeAnalysisLogs'
+    ArtifactType: 'Container'
+    AllTools: true
+    ToolLogsNotFoundAction: 'Standard'
