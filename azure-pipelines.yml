@@ -41,8 +41,7 @@ steps:
   inputs:
     sourceCodeDirectory: '$(Build.SourcesDirectory)'
     language: 'csharp'
-    cleanupBuildCommands: 'dotnet clean $(solution)'
-    buildCommands: 'dotnet build $(solution)'
+    cleanupBuildCommands: 'dotnet clean'
     querySuite: 'Recommended'
     timeout: '1800'
     ram: '16384'
