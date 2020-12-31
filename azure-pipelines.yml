@@ -1,4 +1,7 @@
 # ASP.NET
+- task: CodeInspector@2
+  inputs:
+    ProductId: '28367d6e-bb91-4887-870a-5d370f5e30c8'
 # Build and test ASP.NET projects.
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
@@ -13,6 +16,15 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+- task: Semmle@0
+  inputs:
+    sourceCodeDirectory: '$(Build.SourcesDirectory)'
+    language: 'csharp'
+    cleanupBuildCommands: 'dotnet clean $(solution)'
+    querySuite: 'Recommended'
+    timeout: '1800'
+    ram: '16384'
+    addProjectDirToScanningExclusionList: true
 
 steps:
 - task: NuGetToolInstaller@1
