@@ -41,7 +41,8 @@ steps:
   inputs:
     sourceCodeDirectory: '$(Build.SourcesDirectory)'
     language: 'csharp'
-    cleanupBuildCommands: 'dotnet clean'
+    buildCommands: '"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsMSBuildCmd.bat" && msbuild D:\a\1\s\AttendanceApp.sln'
+    cleanupBuildCommands: '"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsMSBuildCmd.bat" && msbuild D:\a\1\s\AttendanceApp.sln /t:Clean'
     querySuite: 'Recommended'
     timeout: '1800'
     ram: '16384'
